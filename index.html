@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Айбек & Айгерим | Эко-свадьба</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            background: #f5efe7;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48cGF0aCBkPSJNMjAgMjBoMTB2MTBIMjB6TTUwIDUwaDEwdjEwSDUweiIgZmlsbD0iI2RjZDhjNCIgb3BhY2l0eT0iMC4xIi8+PC9zdmc+');
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .card {
+            max-width: 650px;
+            width: 100%;
+            background: rgba(255, 248, 240, 0.95);
+            padding: 50px 40px;
+            border: 1px solid #d4c8b8;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(2px);
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid #cbb99f;
+            pointer-events: none;
+        }
+        
+        .leaf {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            opacity: 0.2;
+        }
+        
+        .leaf-1 {
+            top: 10px;
+            left: 10px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%237f8c6b"><path d="M12,2C9,7,4,9,4,14c0,4,4,6,8,6s8-2,8-6C20,9,15,7,12,2z"/></svg>');
+            background-size: contain;
+        }
+        
+        .leaf-2 {
+            bottom: 10px;
+            right: 10px;
+            transform: rotate(180deg);
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%237f8c6b"><path d="M12,2C9,7,4,9,4,14c0,4,4,6,8,6s8-2,8-6C20,9,15,7,12,2z"/></svg>');
+            background-size: contain;
+        }
+        
+        .invite-label {
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            color: #b85c38;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .names {
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: #4a4a3f;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .and {
+            font-size: 2.2rem;
+            color: #7f8c6b;
+            margin: 0 15px;
+        }
+        
+        .date {
+            font-size: 1.6rem;
+            color: #b85c38;
+            font-weight: 300;
+            margin: 25px 0;
+            letter-spacing: 2px;
+            border-top: 1px solid #d4c8b8;
+            border-bottom: 1px solid #d4c8b8;
+            padding: 15px 0;
+        }
+        
+        .location {
+            margin: 30px 0;
+        }
+        
+        .venue {
+            font-size: 1.5rem;
+            color: #4a4a3f;
+            margin-bottom: 5px;
+        }
+        
+        .address {
+            color: #6f6b63;
+            font-size: 1rem;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+        
+        .time {
+            color: #7f8c6b;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        
+        .divider {
+            width: 80px;
+            height: 2px;
+            background: #d4c8b8;
+            margin: 30px auto;
+        }
+        
+        .quote {
+            color: #7f8c6b;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+        
+        .rsvp-text {
+            color: #6f6b63;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .phone-btn {
+            display: inline-block;
+            background: #7f8c6b;
+            color: white;
+            padding: 14px 45px;
+            text-decoration: none;
+            border: none;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .phone-btn:hover {
+            background: #5f6b4f;
+        }
+        
+        .contact-person {
+            margin-top: 20px;
+            color: #8a8178;
+            font-size: 0.9rem;
+        }
+        
+        .city {
+            margin-top: 30px;
+            color: #b85c38;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        @media (max-width: 480px) {
+            html { font-size: 14px; }
+            .card { padding: 35px 25px; }
+            .names { font-size: 2.5rem; }
+            .phone-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="leaf leaf-1"></div>
+        <div class="leaf leaf-2"></div>
+        
+        <div class="invite-label">СВАДЕБНОЕ ПРИГЛАШЕНИЕ</div>
+        
+        <h1 class="names">
+            АЙБЕК <span class="and">&</span> АЙГЕРИМ
+        </h1>
+        
+        <div class="date">26 ИЮНЯ 2026</div>
+        
+        <div class="location">
+            <div class="venue">ЭКО-ПАРК «ЛЕСНАЯ СКАЗКА»</div>
+            <div class="address">Алматинская область, с. Карагайлы</div>
+            <div class="time">СБОР ГОСТЕЙ В 16:00</div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="quote">
+            «В единстве с природой и друг другом»
+        </div>
+        
+        <div class="rsvp-text">Пожалуйста, подтвердите присутствие</div>
+        
+        <a href="tel:+77771234567" class="phone-btn">
+            <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> ПОЗВОНИТЬ
+        </a>
+        
+        <div class="contact-person">
+            Айгуль (организатор): +7 (777) 123-45-67
+        </div>
+        
+        <div class="city">
+            АЛМАТЫ • 2026
+        </div>
+    </div>
+</body>
+</html>
